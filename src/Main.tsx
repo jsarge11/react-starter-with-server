@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
 import axios from 'axios';
 import './global.scss';
+
+const { useEffect } = React;
 
 export const Main = () => {
 	useEffect(() => {

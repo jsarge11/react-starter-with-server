@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"jsx": "react",
+		"module": "commonjs",
+		"noImplicitAny": true,
+		"preserveConstEnums": true,
+		"removeComments": true,
+		"outDir": "./server/dist",
+		"target": "es5"
+	},
+	"include": ["server"]
+}
