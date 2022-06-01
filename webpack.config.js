@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { DefinePlugin } = require('webpack');
+const dotenv = require('dotenv');
 const path = require('path');
 
 module.exports = {
@@ -6,6 +8,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'main.js',
+		globalObject: 'this',
 	},
 	module: {
 		rules: [
@@ -22,7 +25,7 @@ module.exports = {
 			},
 			{
 				test: /\.(ts|tsx)$/,
-				loader: 'awesome-typescript-loader',
+				loader: 'ts-loader',
 			},
 		],
 	},
@@ -32,6 +35,10 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
+		}),
+		,
+		new DefinePlugin({
+			'process.env': JSON.stringify(dotenv.config().parsed),
 		}),
 	],
 	devServer: {
