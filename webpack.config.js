@@ -36,7 +36,6 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: 'src/index.html',
 		}),
-		,
 		new DefinePlugin({
 			'process.env': JSON.stringify(dotenv.config().parsed),
 		}),
