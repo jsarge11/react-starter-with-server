@@ -16,5 +16,5 @@ export const Main = () => {
 			});
 	}, []);
 
-	return <h1 className="main">And we're still kickin' ass!</h1>;
+	return <h1 className="center">And we're still kickin' ass!</h1>;
 };
