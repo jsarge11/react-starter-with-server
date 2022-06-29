@@ -5,6 +5,7 @@
 		"noImplicitAny": true,
 		"preserveConstEnums": true,
 		"removeComments": true,
+		"esModuleInterop": true,
 		"outDir": "serverjs",
 		"target": "es5"
 	},

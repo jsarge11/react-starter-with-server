@@ -2,7 +2,7 @@
 	"name": "react-starter",
 	"version": "1.0.0",
 	"description": "boilerplate for non CRA build",
-	"main": "server/dist/index.js",
+	"main": "server/app.ts",
 	"scripts": {
 		"start": "webpack-dev-server --mode=development --hot",
 		"build": "webpack --mode=production --progress",
