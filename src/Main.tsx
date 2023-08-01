@@ -1,20 +1,29 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './global.scss';
-
-const { useEffect } = React;
+import { multiply } from 'utils';
 
 export const Main = () => {
+	const [serverMessage, setServerMessage] = useState('');
 	useEffect(() => {
 		axios
 			.get('/test')
 			.then((res) => {
-				alert(res.data);
+				setServerMessage(res.data);
 			})
 			.catch(() => {
-				alert('Call to server failed, fool!');
+				setServerMessage("I can't use that yet. [Server not working]");
 			});
 	}, []);
 
-	return <h1 className="center">And we're still kickin' ass!</h1>;
+	const result = multiply(2, 6);
+	return (
+		<div>
+			<h1 className="center">May your blades never dull.</h1>
+			<p>
+				{result} {`<-- That came from an alias! Go team!`}
+			</p>
+			<p>{serverMessage}</p>
+		</div>
+	);
 };

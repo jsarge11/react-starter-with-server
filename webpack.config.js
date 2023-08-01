@@ -20,7 +20,7 @@ module.exports = {
 				},
 			},
 			{
-				test: /\.scss/,
+				test: /\.s?css/,
 				use: ['style-loader', 'css-loader', 'sass-loader'],
 			},
 			{
@@ -31,6 +31,9 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.js', '.json', '.ts', '.tsx'],
+		alias: {
+			utils: path.resolve(__dirname, 'src/utils/index.ts'),
+		},
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -45,7 +48,7 @@ module.exports = {
 		static: path.resolve(__dirname, 'dist'),
 		proxy: {
 			'/': {
-				target: 'http://localhost:5050',
+				target: 'http://localhost:5555',
 			},
 		},
 	},

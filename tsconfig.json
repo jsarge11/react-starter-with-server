@@ -7,7 +7,12 @@
 		"removeComments": true,
 		"esModuleInterop": true,
 		"outDir": "serverjs",
-		"target": "es5"
+		"target": "es5",
+		"moduleResolution": "node",
+		"paths": {
+			"utils": ["./src/utils/index.ts"]
+		}
 	},
-	"include": ["server"]
+	"include": ["server", "src"],
+	"exclude": ["node_modules"]
 }

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
 
 export const test = (req: Request, res: Response) => {
-	res.status(200).send('Ready to work!');
+	res.status(200).send('Ready to work! [Server Live]');
 };
